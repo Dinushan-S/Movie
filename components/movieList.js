@@ -6,7 +6,7 @@ import { useNavigation } from '@react-navigation/native';
 export default function MovieList({ title, data }) {
     var { width, height } = Dimensions.get('window');
     let movieName = "The Tomorrow War";
-    const navigation = useNavigation;
+    const navigation = useNavigation();
     return (
         <View className="mb-8 space-y-4">
             <View className='mx-4 flex-row justify-between items-center'>
