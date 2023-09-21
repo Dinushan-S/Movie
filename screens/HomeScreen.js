@@ -6,6 +6,7 @@ import { Bars3CenterLeftIcon, MagnifyingGlassIcon } from 'react-native-heroicons
 import { styles } from '../theme'
 import TrendingMovies from '../components/trendingMovies'
 import MovieList from '../components/movieList'
+import TopRated from '../components/topRated'
 
 const ios = Platform.OS == 'ios';
 export default function HomeScreen() {
@@ -38,6 +39,9 @@ export default function HomeScreen() {
 
                 {/* Upcoming movies row */}
                 <MovieList title="Upcoming" data={upcoming} />
+
+                {/* Top Rated movies row */}
+                <MovieList title="Top Rated" data={topRated} />
             </ScrollView>
         </View >
     )
