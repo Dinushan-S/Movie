@@ -23,7 +23,7 @@ export default function Cast({ cast, navigation }) {
                                     <Image
                                         className="rounded-2xl h-24 w-20"
                                         source={require('../assets/movie.jpg')}
-                                        onProgress={() => navigation.navigat('person', person)}
+                                        onProgress={() => navigation.push('person', person)}
                                     />
                                 </View>
 
