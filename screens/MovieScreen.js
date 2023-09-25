@@ -7,6 +7,7 @@ import { HeartIcon } from 'react-native-heroicons/solid';
 import { styles, theme } from '../theme';
 import { LinearGradient } from 'expo-linear-gradient';
 import Cast from '../components/cast';
+import MovieList from '../components/movieList';
 
 var { width, height } = Dimensions.get('window');
 const ios = Platform.OS == "ios";
@@ -17,7 +18,8 @@ export default function MovieScreen() {
     const [isFavourite, toggleFavourite] = useState(false);
     const navigation = useNavigation();
     let movieName = "The Tomorrow War";
-    const [cast, setCast] = useState([]);
+    const [cast, setCast] = useState([1, 2, 3, 4, 5]);
+    const [similarMovies, setSimilarMovies] = useState([1, 2, 3, 4, 5]);
 
     useEffect(() => {
         //call movie api
@@ -78,7 +80,10 @@ export default function MovieScreen() {
                 </Text>
 
                 {/* cast */}
-                <Cast cast={cast} />
+                <Cast navigation={navigation} cast={cast} />
+
+                {/* similar movies */}
+                <MovieList title="similar movies" hideSeeAll={true} data={similarMovies} />
             </View>
         </ScrollView >
     )

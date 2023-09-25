@@ -3,7 +3,7 @@ import React from 'react'
 import { styles } from '../theme'
 import { useNavigation } from '@react-navigation/native';
 
-export default function MovieList({ title, data }) {
+export default function MovieList({ title, data, hideSeeAll }) {
     var { width, height } = Dimensions.get('window');
     let movieName = "The Tomorrow War";
     const navigation = useNavigation();
@@ -11,9 +11,10 @@ export default function MovieList({ title, data }) {
         <View className="mb-8 space-y-4">
             <View className='mx-4 flex-row justify-between items-center'>
                 <Text className="text-white text-xl">{title}</Text>
-                <TouchableOpacity>
+                {!hideSeeAll && (<TouchableOpacity>
                     <Text style={styles.text} className="text-lg">See All</Text>
-                </TouchableOpacity>
+                </TouchableOpacity>)}
+
             </View>
             {/* movie row */}
             <ScrollView

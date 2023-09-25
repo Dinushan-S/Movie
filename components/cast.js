@@ -1,7 +1,7 @@
 import { View, Text, ScrollView, TouchableOpacity, Image } from 'react-native'
 import React from 'react'
 
-export default function Cast({ cast }) {
+export default function Cast({ cast, navigation }) {
     let personName = 'keanu Reevs';
     let charName = 'John wick'
     return (
@@ -12,18 +12,6 @@ export default function Cast({ cast }) {
                 showsHorizontalScrollIndicator={false}
                 contentContainerStyle={{ paddingHorizontal: 15 }}
             >
-
-
-
-                <TouchableOpacity>
-                    <Text className="text-white">
-                        {charName}
-                    </Text>
-                </TouchableOpacity>
-
-
-
-
                 {
                     cast && cast.map((person, index) => {
                         return (
@@ -35,6 +23,7 @@ export default function Cast({ cast }) {
                                     <Image
                                         className="rounded-2xl h-24 w-20"
                                         source={require('../assets/movie.jpg')}
+                                        onProgress={() => navigation.navigat('person', person)}
                                     />
                                 </View>
 
@@ -43,7 +32,7 @@ export default function Cast({ cast }) {
                                 </Text>
                                 <Text className="text-neutral-400 text-xs mt-1">
                                     {
-                                        personName.length > 10 ? charName.slice(0, 10) + '...' : charName
+                                        personName.length > 10 ? personName.slice(0, 10) + '...' : personName
                                     }
                                 </Text>
                             </TouchableOpacity>
