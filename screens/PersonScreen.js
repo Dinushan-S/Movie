@@ -5,6 +5,7 @@ import { ChevronLeftIcon } from 'react-native-heroicons/outline';
 import { HeartIcon } from 'react-native-heroicons/solid';
 import { styles } from '../theme';
 import { useNavigation } from '@react-navigation/native';
+import MovieList from '../components/movieList';
 
 var { width, height } = Dimensions.get('window');
 const ios = Platform.OS == "ios";
@@ -13,6 +14,7 @@ const verticalMargin = ios ? '' : 'mt-3';
 export default function PersonScreen() {
   const navigation = useNavigation();
   const [isFavourite, toggleFavourite] = useState(false);
+  const [personMovies, setPersonMovies] = useState([1, 2, 3, 4])
   return (
     <ScrollView
       className="flex-1 bg-neutral-900"
@@ -55,19 +57,29 @@ export default function PersonScreen() {
           <View className="border-r-2 border-r-neutral-400 px-2 item-center">
             <Text className="text-white font-semibold">Gender</Text>
             <Text className="text-neutral-300 font-sm">Male</Text>
-          </View><View className="border-r-2 border-r-neutral-400 px-2 item-center">
-            <Text className="text-white font-semibold">Gender</Text>
-            <Text className="text-neutral-300 font-sm">Male</Text>
-          </View><View className="border-r-2 border-r-neutral-400 px-2 item-center">
-            <Text className="text-white font-semibold">Gender</Text>
-            <Text className="text-neutral-300 font-sm">Male</Text>
-          </View><View className="border-r-2 border-r-neutral-400 px-2 item-center">
-            <Text className="text-white font-semibold">Gender</Text>
-            <Text className="text-neutral-300 font-sm">Male</Text>
+          </View>
+          <View className="border-r-2 border-r-neutral-400 px-2 item-center">
+            <Text className="text-white font-semibold">Birthday</Text>
+            <Text className="text-neutral-300 font-sm">1964-34-23</Text>
+          </View>
+          <View className="border-r-2 border-r-neutral-400 px-2 item-center">
+            <Text className="text-white font-semibold">Known for</Text>
+            <Text className="text-neutral-300 font-sm">Acting</Text>
+          </View>
+          <View className="border-r-neutral-400 px-2 item-center">
+            <Text className="text-white font-semibold">Popularity</Text>
+            <Text className="text-neutral-300 font-sm">64.23</Text>
           </View>
         </View>
+        <View className="my-6 mx-4 space-y-2">
+          <Text className='text-white text-lg'>Biography</Text>
+          <Text className="text-neutral-400 tracking-wide">
+            Keanu Charles Reeves is a Canadian actor and musician. Born in Beirut and raised in Toronto, he made his acting debut in the Canadian television series Hangin In, before making his feature film debut in Youngblood.
+          </Text>
+        </View>
+        {/* Movielist */}
+        <MovieList title={'Movies'} hideSeeAll={true} data={personMovies} />
       </View>
-
-    </ScrollView >
+    </ScrollView>
   )
 }
