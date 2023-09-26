@@ -18,12 +18,12 @@ export default function Cast({ cast, navigation }) {
                             <TouchableOpacity
                                 key={index}
                                 className="mr-4 item-center"
+                                onPress={() => navigation.navigate('Person', person)}
                             >
                                 <View className="overflow-hidden rounded-full h-20 w-20 item-center border border-neutral-500">
                                     <Image
                                         className="rounded-2xl h-24 w-20"
                                         source={require('../assets/movie.jpg')}
-                                        onProgress={() => navigation.navigate('person', person)}
                                     />
                                 </View>
 
