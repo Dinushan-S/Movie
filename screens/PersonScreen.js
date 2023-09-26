@@ -42,7 +42,29 @@ export default function PersonScreen() {
               style={{ width: width * 0.74, height: height * 0.43 }}
             />
           </View>
-
+        </View>
+        <View className="mt-6">
+          <Text className="text-3xl text-white font-bold text-center">
+            Keanu Reeves
+          </Text>
+          <Text className="text-base text-neutral-500 text-center">
+            London,United Kingdom
+          </Text>
+        </View>
+        <View className="mx-3 p-4 mt-3 flex-row justify-between items-center bg-neutral-700 rounded-full">
+          <View className="border-r-2 border-r-neutral-400 px-2 item-center">
+            <Text className="text-white font-semibold">Gender</Text>
+            <Text className="text-neutral-300 font-sm">Male</Text>
+          </View><View className="border-r-2 border-r-neutral-400 px-2 item-center">
+            <Text className="text-white font-semibold">Gender</Text>
+            <Text className="text-neutral-300 font-sm">Male</Text>
+          </View><View className="border-r-2 border-r-neutral-400 px-2 item-center">
+            <Text className="text-white font-semibold">Gender</Text>
+            <Text className="text-neutral-300 font-sm">Male</Text>
+          </View><View className="border-r-2 border-r-neutral-400 px-2 item-center">
+            <Text className="text-white font-semibold">Gender</Text>
+            <Text className="text-neutral-300 font-sm">Male</Text>
+          </View>
         </View>
       </View>
 
