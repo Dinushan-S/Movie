@@ -8,6 +8,7 @@ import React from 'react'
 import HomeScreen from './screens/HomeScreen';
 import MovieScreen from './screens/MovieScreen';
 import PersonScreen from './screens/PersonScreen';
+import Search from './screens/Search';
 
 export default function Navigation() {
     return (
@@ -16,6 +17,7 @@ export default function Navigation() {
                 <Stack.Screen name="Home" component={HomeScreen} />
                 <Stack.Screen name="Movie" component={MovieScreen} />
                 <Stack.Screen name="Person" component={PersonScreen} />
+                <Stack.Screen name="Search" component={Search} />
             </Stack.Navigator>
         </NavigationContainer>
     )
