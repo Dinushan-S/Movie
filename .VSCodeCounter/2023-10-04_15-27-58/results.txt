@@ -1,0 +1,53 @@
+Date : 2023-10-04 15:27:58
+Directory : c:\Users\selva\Desktop\react learn\Movie
+Total : 21 files,  15380 codes, 46 comments, 83 blanks, all 15509 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| JSON       |          4 |     14,703 |         23 |          3 |     14,729 |
+| JavaScript |         16 |        676 |         23 |         79 |        778 |
+| Markdown   |          1 |          1 |          0 |          1 |          2 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++-----------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                  | files      | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                     |         21 |     15,380 |         46 |         83 |     15,509 |
+| . (Files)                                                             |          9 |     14,748 |         27 |         13 |     14,788 |
+| api                                                                   |          1 |         58 |          3 |         17 |         78 |
+| components                                                            |          5 |        156 |          3 |         12 |        171 |
+| constants                                                             |          1 |          1 |          0 |          0 |          1 |
+| screens                                                               |          4 |        409 |         13 |         40 |        462 |
+| theme                                                                 |          1 |          8 |          0 |          1 |          9 |
++-----------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-----------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                              | language   | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| c:\Users\selva\Desktop\react learn\Movie\App.js                       | JavaScript |          8 |          3 |          3 |         14 |
+| c:\Users\selva\Desktop\react learn\Movie\README.md                    | Markdown   |          1 |          0 |          1 |          2 |
+| c:\Users\selva\Desktop\react learn\Movie\api\moviedb.js               | JavaScript |         58 |          3 |         17 |         78 |
+| c:\Users\selva\Desktop\react learn\Movie\app.json                     | JSON       |         16 |         23 |          0 |         39 |
+| c:\Users\selva\Desktop\react learn\Movie\babel.config.js              | JavaScript |          7 |          0 |          1 |          8 |
+| c:\Users\selva\Desktop\react learn\Movie\components\cast.js           | JavaScript |         44 |          1 |          2 |         47 |
+| c:\Users\selva\Desktop\react learn\Movie\components\loading.js        | JavaScript |         12 |          0 |          2 |         14 |
+| c:\Users\selva\Desktop\react learn\Movie\components\movieList.js      | JavaScript |         50 |          1 |          5 |         56 |
+| c:\Users\selva\Desktop\react learn\Movie\components\topRated.js       | JavaScript |          9 |          0 |          1 |         10 |
+| c:\Users\selva\Desktop\react learn\Movie\components\trendingMovies.js | JavaScript |         41 |          1 |          2 |         44 |
+| c:\Users\selva\Desktop\react learn\Movie\constants\index.js           | JavaScript |          1 |          0 |          0 |          1 |
+| c:\Users\selva\Desktop\react learn\Movie\eas.json                     | JSON       |         18 |          0 |          1 |         19 |
+| c:\Users\selva\Desktop\react learn\Movie\navigation.js                | JavaScript |         21 |          0 |          3 |         24 |
+| c:\Users\selva\Desktop\react learn\Movie\package-lock.json            | JSON       |     14,636 |          0 |          1 |     14,637 |
+| c:\Users\selva\Desktop\react learn\Movie\package.json                 | JSON       |         33 |          0 |          1 |         34 |
+| c:\Users\selva\Desktop\react learn\Movie\screens\HomeScreen.js        | JavaScript |         77 |          0 |         11 |         88 |
+| c:\Users\selva\Desktop\react learn\Movie\screens\MovieScreen.js       | JavaScript |        117 |          6 |         12 |        135 |
+| c:\Users\selva\Desktop\react learn\Movie\screens\PersonScreen.js      | JavaScript |        112 |          1 |          8 |        121 |
+| c:\Users\selva\Desktop\react learn\Movie\screens\Search.js            | JavaScript |        103 |          6 |          9 |        118 |
+| c:\Users\selva\Desktop\react learn\Movie\tailwind.config.js           | JavaScript |          8 |          1 |          2 |         11 |
+| c:\Users\selva\Desktop\react learn\Movie\theme\index.js               | JavaScript |          8 |          0 |          1 |          9 |
+| Total                                                                 |            |     15,380 |         46 |         83 |     15,509 |
++-----------------------------------------------------------------------+------------+------------+------------+------------+------------+

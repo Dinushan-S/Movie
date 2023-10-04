@@ -9,6 +9,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import Cast from '../components/cast';
 import MovieList from '../components/movieList';
 import Loading from '../components/loading';
+import { fallbackMovieUrl, fetchMovieCredits, fetchMovieDetails, fetchSimilarMovie, img500 } from '../api/moviedb';
 
 var { width, height } = Dimensions.get('window');
 const ios = Platform.OS == "ios";
@@ -19,14 +20,36 @@ export default function MovieScreen() {
     const [isFavourite, toggleFavourite] = useState(false);
     const navigation = useNavigation();
     let movieName = "The Tomorrow War";
-    const [cast, setCast] = useState([1, 2, 3, 4, 5]);
+    const [cast, setCast] = useState([]);
+    const [movieDetails, setMovieDetails] = useState({});
+    const [movieCredits, setMovieCredits] = useState({});
     const [similarMovies, setSimilarMovies] = useState([1, 2, 3, 4, 5]);
     const [loading, setLoading] = useState(false);
 
 
     useEffect(() => {
         //call movie api
+        // console.log('itemid', item.id);
+        getMovieDetails(item.id);
+        getMovieCredits(item.id);
+        getSimilarMovie(item.id);
     }, [item]);
+
+    const getMovieDetails = async (id) => {
+        const data = await fetchMovieDetails(id);
+        if (data) setMovieDetails(data);
+    }
+
+    const getMovieCredits = async (id) => {
+        const data = await fetchMovieCredits(id);
+        if (data && data.cast) setCast(data.cast);
+    }
+
+    const getSimilarMovie = async id => {
+        const data = await fetchSimilarMovie(id);
+        if (data && data.results) setSimilarMovies(data.results);
+        // console.log("similar movies:", data);
+    }
 
     return (
         <ScrollView
@@ -49,7 +72,8 @@ export default function MovieScreen() {
                     ) : (
                         <View>
                             <Image
-                                source={require('../assets/movie.jpg')}
+                                // source={require('../assets/movie.jpg')}
+                                source={{ uri: img500(movieDetails.poster_path) } || fallbackMovieUrl}
                                 style={{ width, height: height * 0.55 }}
                             />
                             <LinearGradient
@@ -67,32 +91,44 @@ export default function MovieScreen() {
             <View style={{ marginTop: -(height * 0.09) }} className="space-y-3">
                 {/* title */}
                 <Text className="text-white text-center text-3xl font-bold tracking-wider">
-                    {movieName}
+                    {movieDetails.title}
                 </Text>
                 {/* status,releast ,runtime */}
-                <Text className="text-neutral-400 font-semibold text-base text-center">
-                    Released . 2020 . 150 min
-                </Text>
+                {movieDetails.id ? (
+                    <Text className="text-neutral-400 font-semibold text-base text-center">
+                        {movieDetails.status} . {movieDetails?.release_date?.split('-')[0]} . {movieDetails.runtime} min
+                    </Text>
+                ) : null}
+
                 {/* genres */}
                 <View className="flex-row justify-center mx-4 space-x-2">
-                    <Text className="text-neutral-400 font-semibold text-base text-center">
-                        Action .
-                    </Text><Text className="text-neutral-400 font-semibold text-base text-center">
+                    {movieDetails?.genres?.map((genre, index) => {
+                        let showDot = index + 1 != movieDetails.genres.length;
+                        return (
+                            <Text key={index} className="text-neutral-400 font-semibold text-base text-center">
+                                {genre.name} {showDot ? "." : null}
+                            </Text>
+                        )
+                        {/* <Text className="text-neutral-400 font-semibold text-base text-center">
                         Thrill .
-                    </Text><Text className="text-neutral-400 font-semibold text-base text-center">
-                        Comedy
                     </Text>
+                    <Text className="text-neutral-400 font-semibold text-base text-center">
+                        Comedy
+                    </Text> */}
+                    })
+                    }
                 </View>
+
                 {/* description */}
                 <Text className="text-neutral-400 mx-4 tracking-wide text-center">
-                    super-hero parter scottlang and hope van dyne
+                    {movieDetails.overview}
                 </Text>
 
                 {/* cast */}
-                <Cast navigation={navigation} cast={cast} />
+                {cast.length > 0 && <Cast navigation={navigation} cast={cast} />}
 
                 {/* similar movies */}
-                <MovieList title="similar movies" hideSeeAll={true} data={similarMovies} />
+                {similarMovies.length > 0 && <MovieList title="similar movies" hideSeeAll={true} data={similarMovies} />}
             </View>
         </ScrollView >
     )
